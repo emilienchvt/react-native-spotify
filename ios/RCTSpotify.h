@@ -86,6 +86,9 @@ typedef enum
 //getMe((result?, error?))
 -(void)getMe:(RCTResponseSenderBlock)completion;
 
+//getMyPlaylists((result?, error?))
+-(void)getMyPlaylists:(RCTResponseSenderBlock)completion;
+
 //search(query, types, options?, (result?, error?))
 -(void)search:(NSString*)query types:(NSArray<NSString*>*)types options:(NSDictionary*)options completion:(RCTResponseSenderBlock)completion;
 

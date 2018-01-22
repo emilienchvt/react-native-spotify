@@ -70,9 +70,9 @@ import Spotify from 'react-native-spotify';
 * **Auth**
 
 	Contains information about authentication data
-	
+
 	* *Properties*
-	
+
 		* **accessToken** - A token used to communicate with the Spotify API
 		* **refreshToken** - An encrypted token used to get a new access token when it expires. This should be encrypted by your token swap service, as per OAuth standards.
 		* **expireTime** - The time that the access token expires, in milliseconds from January 1, 1970 00:00:00 UTC
@@ -82,9 +82,9 @@ import Spotify from 'react-native-spotify';
 * **PlaybackState**
 
 	Contains information about the current state of the player
-	
+
 	* *Properties*
-	
+
 		* **playing** - boolean indicating whether the player is playing
 		* **repeating** - boolean indicating whether the player is repeating
 		* **shuffling** - boolean indicating whether the player is shuffling
@@ -97,9 +97,9 @@ import Spotify from 'react-native-spotify';
 * **PlaybackTrack**
 
 	Contains information about a track in the playback queue
-	
+
 	* *Properties*
-	
+
 		* **name** - The title of the track
 		* **uri** - The uri of the track
 		* **contextName** - The name of the playlist or album that the track is being played from
@@ -117,9 +117,9 @@ import Spotify from 'react-native-spotify';
 * **PlaybackMetadata**
 
 	Contains information about the previous, current, and next tracks in the player
-	
+
 	* *Properties*
-	
+
 		* **prevTrack** - A *PlaybackTrack* with information about the previous track
 		* **currentTrack** - A *PlaybackTrack* with information about the current track
 		* **nextTrack** - A *PlaybackTrack* with information about the next track
@@ -130,9 +130,9 @@ import Spotify from 'react-native-spotify';
 * **Error**
 
 	Passed to callback functions to indicate something went wrong during the function call. Right now, there are some uniformity issues between iOS and Android on the errors that get returned, but for now, use the **message** attribute to display a message to the user.
-	
+
 	* *Properties*
-	
+
 		* **domain** - A string indicating what part of the system the error belongs to
 		* **code** - An integer containing the actual error code of the error
 		* **message** - A string containing a user-readable description of the error
@@ -144,7 +144,7 @@ import Spotify from 'react-native-spotify';
 * **initialize**( *options*, ( *loggedIn*, *error*? ) => {} )
 
 	Initializes the Spotify module and resumes a logged in session if there is one.
-	
+
 	* *Parameters*
 		* **options** - an object with options to pass to the Spotify Module
 			* **clientID** - Your spotify application's ClientID that you registered with spotify [here](https://developer.spotify.com/my-applications)
@@ -153,9 +153,9 @@ import Spotify from 'react-native-spotify';
 			* **scopes** - An array of scopes to use in the application. A list of scopes can be found [here](https://developer.spotify.com/web-api/using-scopes/)
 			* **tokenSwapURL** - The URL to use to swap an authentication code for an access token
 			* **tokenRefreshURL** - The URL to use to get a new access token from a refresh token
-  		
+
 		* **loggedIn** - A boolean indicating whether or not a session was automatically logged back in
-  	
+
 		* **error** - An error that occurred during initialization, or *null* if no error occurred
 
 
@@ -166,7 +166,7 @@ import Spotify from 'react-native-spotify';
 	Checks if the Spotify module has been initialized yet.
 
 	* *Returns*
-	
+
 		* *true* if the Spotify module has been initialized
 		* *false* if the Spotify module has not been initialized
 
@@ -176,9 +176,9 @@ import Spotify from 'react-native-spotify';
 * **isInitializedAsync**( ( *initialized* ) => {} )
 
 	Checks if the Spotify module has been initialized yet, but passes the result to a callback rather than returning it.
-	
+
 	* *Parameters*
-	
+
 		* **initialized** - A boolean indicating whether or not the Spotify module has been initialized
 
 
@@ -187,11 +187,11 @@ import Spotify from 'react-native-spotify';
 * **login**( ( *loggedIn*, *error*? ) => {} )
 
 	Opens a UI to log into Spotify.
-	
+
 	* *Parameters*
-	
+
 		* **loggedIn** - A boolean indicating whether or not the client was logged in
-	
+
 		* **error** - An error that occurred during login, or *null* if no error occurred
 
 
@@ -202,7 +202,7 @@ import Spotify from 'react-native-spotify';
 	Checks if the client is logged in.
 
 	* *Returns*
-		
+
 		* *true* if the client is logged in
 		* *false* if the client is not logged in
 
@@ -212,9 +212,9 @@ import Spotify from 'react-native-spotify';
 * **isLoggedInAsync**( ( *loggedIn* ) => {} )
 
 	Checks if the client is logged in, but passes the result to a callback rather than returning it.
-	
+
 	* *Parameters*
-	
+
 		* **loggedIn** - A boolean indicating whether or not the client is logged in
 
 
@@ -223,9 +223,9 @@ import Spotify from 'react-native-spotify';
 * **logout**( ( *error*? ) => {} )
 
 	Logs out of Spotify.
-	
+
 	* *Parameters*
-	
+
 		* **error** - An error that occurred during logout, or *null* if no error occurred
 
 
@@ -234,9 +234,9 @@ import Spotify from 'react-native-spotify';
 * **getAuth**()
 
 	Gives information about authentication data.
-	
+
 	* *Returns*
-	
+
 		* An *Auth* object
 
 
@@ -245,9 +245,9 @@ import Spotify from 'react-native-spotify';
 * **getAuthAsync**( ( *auth* ) => {} )
 
 	Gives information about authentication data, but passes the result to a callback rather than returning it.
-	
+
 	* *Parameters*
-	
+
 		* **auth** - An *Auth* object
 
 
@@ -258,15 +258,15 @@ import Spotify from 'react-native-spotify';
 * **playURI**( *spotifyURI*, *startIndex*, *startPosition*, ( *error*? ) => {} )
 
 	Play a Spotify URI.
-	
+
 	* *Parameters*
-		
+
 		* **spotifyURI** - The Spotify URI to play
-		
+
 		* **startIndex** - The index of an item that should be played first, e.g. 0 - for the very first track in the playlist or a single track
-		
+
 		* **startPosition** - starting position for playback in seconds
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -275,11 +275,11 @@ import Spotify from 'react-native-spotify';
 * **queueURI**( *spotifyURI*, ( *error*? ) => {} )
 
 	Queue a Spotify URI.
-	
+
 	* *Parameters*
-	
+
 		* **spotifyURI** - The Spotify URI to queue
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -288,19 +288,19 @@ import Spotify from 'react-native-spotify';
 * **setPlaying**( *playing*, ( *error*? ) => {} )
 
 	Set the “playing” status of the player.
-	
+
 	* *Parameters*
-	
+
 		* **playing** - pass *true* to resume playback, or *false* to pause it
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 * **getPlaybackState**()
 
 	Gives the player's current state.
-	
+
 	* *Returns*
-	
+
 		* A *PlaybackState* object, or *null* if the player has not been initialized
 
 
@@ -309,9 +309,9 @@ import Spotify from 'react-native-spotify';
 * **getPlaybackStateAsync**( ( *playbackState*? ) => {} )
 
 	Gives the player's current state, but passes the result to a callback rather than returning it.
-	
+
 	* *Parameters*
-	
+
 		* **playbackState** - A *PlaybackState* object, or *null* if the player has not been initialized
 
 
@@ -319,9 +319,9 @@ import Spotify from 'react-native-spotify';
 * **getPlaybackMetadata**()
 
 	Gives information about the previous, current, and next tracks in the player
-	
+
 	* *Returns*
-	
+
 		* A *PlaybackMetadata* object, or *null* if the player has not been initialized
 
 
@@ -329,9 +329,9 @@ import Spotify from 'react-native-spotify';
 * **getPlaybackMetadataAsync**( ( *playbackMetadata*? ) => {} )
 
 	Gives information about the previous, current, and next tracks in the player, but passes the result to a callback rather than returning it.
-	
+
 	* *Parameters*
-	
+
 		* **playbackMetadata** - A *PlaybackMetadata* object, or *null* if the player has not been initialized
 
 
@@ -340,9 +340,9 @@ import Spotify from 'react-native-spotify';
 * **skipToNext**( ( *error*? ) => {} )
 
 	Skips to the next track.
-	
+
 	* *Parameters*
-	
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -351,9 +351,9 @@ import Spotify from 'react-native-spotify';
 * **skipToPrevious**( ( *error*? ) => {} )
 
 	Skips to the previous track.
-	
+
 	* *Parameters*
-	
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -362,11 +362,11 @@ import Spotify from 'react-native-spotify';
 * **setShuffling**( *shuffling*, ( *error*? ) => {] )
 
 	Enables or disables shuffling on the player.
-	
+
 	* *Parameters*
-	
+
 		* **shuffling** - *true* to enable shuffle, *false* to disable it
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -375,11 +375,11 @@ import Spotify from 'react-native-spotify';
 * **setRepeating**( *repeating*, ( *error*? ) => {} )
 
 	Enables or disables repeating on the player.
-	
+
 	* *Parameters*
-	
+
 		* **repeating** - *true* to enable repeat, *false* to disable it
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -390,19 +390,19 @@ import Spotify from 'react-native-spotify';
 * **sendRequest**( *endpoint*, *method*, *params*, *isJSONBody*, ( *result*?, *error*? ) => {} )
 
 	Sends a general request to the spotify api.
-	
+
 	* *Parameters*
-	
+
 		* **endpoint** - the api endpoint, without a leading slash, e.g. `v1/browse/new-releases`
-		
+
 		* **method** - the HTTP method to use
-		
+
 		* **params** - the request parameters
-		
+
 		* **isJSONBody** - whether or not to send the parameters as json in the body of the request
-		
+
 		* **result** - the request result object
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -411,30 +411,40 @@ import Spotify from 'react-native-spotify';
 * **getMe**( ( *result*?, *error*? ) => {} )
 
 	Retrieves information about the logged in Spotify user.
-	
+
 	* *Parameters*
-	
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-current-users-profile/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
+
+* **getMyPlaylists**( ( *result*?, *error*? ) => {} )
+
+	Retrieves the playlists from the logged in Spotify user.
+
+	* *Parameters*
+
+		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-a-list-of-current-users-playlists/#example)
+
+		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
 
 * **search**( *query*, *types*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Sends a [search](https://developer.spotify.com/web-api/search-item/) request to spotify.
-	
+
 	* *Parameters*
-	
+
 		* **query** - The search query string. Same as the *q* parameter on the [search](https://developer.spotify.com/web-api/search-item/) endpoint
-		
+
 		* **types** - An array of item types to search for. Valid types are: `album`, `artist`, `playlist`, and `track`.
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The search result object. An example response can be seen [here](https://developer.spotify.com/web-api/search-item/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -443,15 +453,15 @@ import Spotify from 'react-native-spotify';
 * **getAlbum**( *albumID*, *options*?, ( *result*?. *error*? ) => {} )
 
 	Gets Spotify catalog information for a single album.
-	
+
 	* *Parameters*
-	
+
 		* **albumID** - The Spotify ID for the album
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-album/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -460,15 +470,15 @@ import Spotify from 'react-native-spotify';
 * **getAlbums**( *albumIDs*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information for multiple albums identified by their Spotify IDs.
-	
+
 	* *Parameters*
-	
+
 		* **albumIDs** - An array of the Spotify IDs for the albums
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-several-albums/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -479,13 +489,13 @@ import Spotify from 'react-native-spotify';
 	Gets Spotify catalog information about an album’s tracks.
 
 	* *Parameters*
-	
+
 		* **albumID** - The Spotify ID for the album
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-albums-tracks/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -494,15 +504,15 @@ import Spotify from 'react-native-spotify';
 * **getArtist**( *artistID*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information for a single artist.
-	
+
 	* *Parameters*
-	
+
 		* **artistID** - The Spotify ID for the artist
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-artist/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -511,15 +521,15 @@ import Spotify from 'react-native-spotify';
 * **getArtists**( *artistIDs*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information for several artists based on their Spotify IDs.
-	
+
 	* *Parameters*
-	
+
 		* **artistIDs** - An array of the Spotify IDs for the artists
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-several-artists/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -528,15 +538,15 @@ import Spotify from 'react-native-spotify';
 * **getArtistAlbums**( *artistID*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information about an artist’s albums.
-	
+
 	* *Parameters*
-	
+
 		* **artistID** - The Spotify ID for the artist
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-artists-albums/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -545,17 +555,17 @@ import Spotify from 'react-native-spotify';
 * **getArtistTopTracks**( *artistID*, *country*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information about an artist’s top tracks by country.
-	
+
 	* *Parameters*
-	
+
 		* **artistID** - The Spotify ID for the artist
-		
+
 		* **country** - The country: an [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-artists-top-tracks/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -564,15 +574,15 @@ import Spotify from 'react-native-spotify';
 * **getArtistRelatedArtists**( *artistID*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information about artists similar to a given artist.
-	
+
 	* *Parameters*
-	
+
 		* **artistID** - The Spotify ID for the artist
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-related-artists/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -581,15 +591,15 @@ import Spotify from 'react-native-spotify';
 * **getTrack**( *trackID*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information for a single track identified by its unique Spotify ID.
-	
+
 	* *Parameters*
-	
+
 		* **trackID** - The Spotify ID for the track
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-track/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -598,15 +608,15 @@ import Spotify from 'react-native-spotify';
 * **getTracks**( *trackIDs*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets Spotify catalog information for multiple tracks based on their Spotify IDs.
-	
+
 	* *Parameters*
-	
+
 		* **trackIDs** - An array of the Spotify IDs for the tracks
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-several-tracks/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -615,15 +625,15 @@ import Spotify from 'react-native-spotify';
 * **getTrackAudioAnalysis**( *trackID*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets a detailed audio analysis for a single track identified by its unique Spotify ID.
-	
+
 	* *Parameters*
-	
+
 		* **trackID** - The Spotify ID for the track
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-audio-analysis/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -632,15 +642,15 @@ import Spotify from 'react-native-spotify';
 * **getTrackAudioFeatures**( *trackID*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets audio feature information for a single track identified by its unique Spotify ID.
-	
+
 	* *Parameters*
-	
+
 		* **trackID** - The Spotify ID for the track
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-audio-features/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
 
 
@@ -649,13 +659,13 @@ import Spotify from 'react-native-spotify';
 * **getTracksAudioFeatures**( *trackIDs*, *options*?, ( *result*?, *error*? ) => {} )
 
 	Gets audio features for multiple tracks based on their Spotify IDs.
-	
+
 	* *Parameters*
-	
+
 		* **trackIDs** - An array of the Spotify IDs for the tracks
-		
+
 		* **options** - A map of other optional parameters to specify for the query
-		
+
 		* **result** - The request result object. An example response can be seen [here](https://developer.spotify.com/web-api/get-several-audio-features/#example)
-		
+
 		* **error** - An error object if an error occurred, or *null* if no error occurred
